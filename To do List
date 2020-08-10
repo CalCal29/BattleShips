@@ -1,9 +1,6 @@
-Rules of the game:
+1. Learn node.js. I would like to use node.js in order to host servers for others to play against my battleship bot.
+2. Create the user interface. For this section i would there to be selectable battle ships, these battle ships can be placed on the grid although they cannot over lay.
+once cicked the battleship will stay in place on the grid. There will be a confirm button which locks in the battleships and updates the gird.
 
-1. The game is be played on a 10x10 grid.
-2. Each competitor will place each of 5 ships (of lengths 2, 3, 3, 4, 5) on their grid.
-3. No ships may overlap, but they may be adjacent.
-4. The competitors then take turns firing single shots at their opponent.
-5. A variation on the game allows firing multiple shots per volley, one for each surviving ship.
-6. The opponent will notify the competitor if the shot sinks, hits, or misses.
-7. Game play ends when all of the ships of any one player are sunk
+3. Next we be creating the bot. This bot will use the hunting algorithm, this algortihm is the most used for battleship Ai.
+
