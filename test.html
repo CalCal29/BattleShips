@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            canvas {
+                border: solid black 1px;
+            }
+        </style>
+        <script>
+            CUBE = 63.6363636364
+            function Cruiser(x,y)
+            {
+                this.x = x;
+                this.y = y;
+                
+                this.drawCruiser = function()
+                {
+                    context.beginPath()
+                    context.lineTo(this.x+3*CUBE, this.y )
+                    context.lineTo(this.x+3*CUBE, this.y+CUBE)
+                    context.lineTo(this.x, this.y+CUBE)
+                    context.lineTo(this.x,this.y)
+                    context.fillStyle = "orange"
+                    context.fill()
+                    context.closePath()
+                }
+            }
+
+            function genGrid(){
+                for(i = 0; i <= 700; i = i + 63.6363636364){
+                    context.moveTo(i + 63.6363636364, 63.6363636364);
+                    context.lineTo(i + 63.6363636364,700);
+                    context.stroke();
+                }
+                for(j= 0; j<=700 ; j = j + 63.6363636364){
+                    context.moveTo(63.6363636364,j + 63.6363636364);
+                    context.lineTo(canvas.height,j+63.6363636364);
+                    context.stroke();
+                } 
+                context.font = "60px Arial";
+                
+                context.fillText("A", 10 + 63.6363636364, 50);
+                context.fillText("B", 10 + 2*63.6363636364, 50);
+                context.fillText("C", 10+3*63.6363636364, 50);
+                context.fillText("D", 10 + 4*63.6363636364, 50);
+                context.fillText("E", 10 + 5*63.6363636364, 50 );
+                context.fillText("F", 10 + 6*63.6363636364, 50);
+                context.fillText("G", 10 + 7*63.6363636364, 50);
+                context.fillText("H", 10+ 8*63.6363636364, 50 );
+                context.fillText("I", 20+ 9*63.6363636364, 50);
+                context.fillText("J", 10+ 10*63.6363636364,50);
+
+                context.font = "50px Arial";
+                context.fillText("1", 10 , 50+canvas.width/11);
+                context.fillText("2", 10, 50+ 2*canvas.width/11);
+                context.fillText("3", 10, 50+3*canvas.width/11);
+                context.fillText("4", 10, 50+ 4*canvas.width/11);
+                context.fillText("5", 10, 50+ 5*canvas.width/11 );
+                context.fillText("6", 10 , 50+ 6*canvas.width/11);
+                context.fillText("7", 10 , 50+ 7*canvas.width/11);
+                context.fillText("8", 10, 50 + 8*canvas.width/11);
+                context.fillText("9", 10, 50+ 9*canvas.width/11);
+                context.fillText("10", -5, 50+ 10*canvas.width/11);
+                
+            }
+
+            function genEnemyGrid(){
+                for(i = 0; i <= 700; i = i + 63.6363636364){
+                    context2.moveTo(i + 63.6363636364, 63.6363636364);
+                    context2.lineTo(i + 63.6363636364,700);
+                    context2.stroke();
+                }
+                for(j= 0; j<=700 ; j = j + 63.6363636364){
+                    context2.moveTo(63.6363636364,j + 63.6363636364);
+                    context2.lineTo(canvas2.height,j+63.6363636364);
+                    context2.stroke();
+                } 
+                context2.font = "60px Arial";
+                
+                context2.fillText("A", 10 + 63.6363636364, 50);
+                context2.fillText("B", 10 + 2*63.6363636364, 50);
+                context2.fillText("C", 10+3*63.6363636364, 50);
+                context2.fillText("D", 10 + 4*63.6363636364, 50);
+                context2.fillText("E", 10 + 5*63.6363636364, 50 );
+                context2.fillText("F", 10 + 6*63.6363636364, 50);
+                context2.fillText("G", 10 + 7*63.6363636364, 50);
+                context2.fillText("H", 10+ 8*63.6363636364, 50 );
+                context2.fillText("I", 20+ 9*63.6363636364, 50);
+                context2.fillText("J", 10+ 10*63.6363636364,50);
+
+                context.font = "50px Arial";
+                context2.fillText("1", 10 , 50+63.636363636);
+                context2.fillText("2", 10, 50+ 2*63.6363636364);
+                context2.fillText("3", 10, 50+3*63.6363636364);
+                context2.fillText("4", 10, 50+ 4*63.6363636364);
+                context2.fillText("5", 10, 50+ 5*63.6363636364);
+                context2.fillText("6", 10 , 50+ 6*63.6363636364);
+                context2.fillText("7", 10 , 50+ 7*63.6363636364);
+                context2.fillText("8", 10, 50 + 8*63.6363636364);
+                context2.fillText("9", 10, 50+ 9*63.6363636364);
+                context2.fillText("10", -5, 50+ 10*63.6363636364);
+            }
+            
+
+            function startAnimation()
+            {
+                canvas = document.getElementById("canvas");
+                context = canvas.getContext("2d");
+                canvas2 = document.getElementById("canvas2");
+                context2 = canvas2.getContext("2d");
+                
+                context.strokeStyle = 'black';
+                context.lineWidth= 2;
+
+                context2.strokeStyle = 'black';
+                context2.lineWidth= 2;
+                
+                genGrid();
+                genEnemyGrid();
+        
+                intervalid = setInterval(drawAnimation, 15);
+                cruiser1 = new Cruiser
+
+            }
+
+            function stopAnimation()
+            {
+                
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" height="850px" width="700px"></canvas>
+        <canvas id="canvas2" height="850px" width="700px"></canvas>
+        <br />
+        <button onclick="startAnimation()">Begin Game</button>
+        <button onclick="stopAnimation()">Quit</button>
+    </body> 
+</html>
