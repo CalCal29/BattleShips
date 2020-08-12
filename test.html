@@ -6,169 +6,174 @@
                 border: solid black 1px;
             }
         </style>
-        <!-- <script>
-            CUBE = 63.6363636364
-            function mouseMove(evt) {
-				mouseX = evt.clientX;
-				mouseY = evt.clientY;
-			}
-            function Cruiser(x,y,size,color)
-            {
-                this.x = x;
-                this.y = y;
-                this.size = size;
-                this.color = color;
+        <script>
+            arr = []
+            for(var i = 0; i <= 200; ++i){
+                arr.push(document.getElementById('${i}'));  
 
-                
-                
-                
-                this.drawCruiser = function()
-                {
-                    context.beginPath()
-                
-                    context.rect(this.x,this.y,this.size*CUBE, CUBE)
-                    context.fillStyle = this.color;
-                    context.fill()
-                    context.closePath()
-                }
-                
-                
             }
+            // CUBE = 63.6363636364
+            // function mouseMove(evt) {
+			// 	mouseX = evt.clientX;
+			// 	mouseY = evt.clientY;
+			// }
+            // function Cruiser(x,y,size,color)
+            // {
+            //     this.x = x;
+            //     this.y = y;
+            //     this.size = size;
+            //     this.color = color;
 
-            function genGrid(){
-                for(i = 0; i <= 700; i = i + 63.6363636364){
-                    context.moveTo(i + 63.6363636364, 63.6363636364);
-                    context.lineTo(i + 63.6363636364,700);
-                    context.stroke();
-                }
-                for(j= 0; j<=700 ; j = j + CUBE){
-                    context.moveTo(CUBE,j + CUBE);
-                    context.lineTo(canvas.height,j+CUBE);
-                    context.stroke();
-                } 
-                context.font = "60px Arial";
-                context.fillStyle = 'yellow'
+                
+                
+                
+            //     this.drawCruiser = function()
+            //     {
+            //         context.beginPath()
+                
+            //         context.rect(this.x,this.y,this.size*CUBE, CUBE)
+            //         context.fillStyle = this.color;
+            //         context.fill()
+            //         context.closePath()
+            //     }
+                
+                
+            // }
+
+            // function genGrid(){
+            //     for(i = 0; i <= 700; i = i + 63.6363636364){
+            //         context.moveTo(i + 63.6363636364, 63.6363636364);
+            //         context.lineTo(i + 63.6363636364,700);
+            //         context.stroke();
+            //     }
+            //     for(j= 0; j<=700 ; j = j + CUBE){
+            //         context.moveTo(CUBE,j + CUBE);
+            //         context.lineTo(canvas.height,j+CUBE);
+            //         context.stroke();
+            //     } 
+            //     context.font = "60px Arial";
+            //     context.fillStyle = 'yellow'
             
                 
-                context.fillText("A", 10 + CUBE, 50);
-                context.fillText("B", 10 + 2*CUBE, 50);
-                context.fillText("C", 10+3*CUBE, 50);
-                context.fillText("D", 10 + 4*CUBE, 50);
-                context.fillText("E", 10 + 5*CUBE, 50 );
-                context.fillText("F", 10 + 6*CUBE, 50);
-                context.fillText("G", 10 + 7*CUBE, 50);
-                context.fillText("H", 10+ 8*CUBE, 50 );
-                context.fillText("I", 20+ 9*CUBE, 50);
-                context.fillText("J", 10+ 10*CUBE,50);
+            //     context.fillText("A", 10 + CUBE, 50);
+            //     context.fillText("B", 10 + 2*CUBE, 50);
+            //     context.fillText("C", 10+3*CUBE, 50);
+            //     context.fillText("D", 10 + 4*CUBE, 50);
+            //     context.fillText("E", 10 + 5*CUBE, 50 );
+            //     context.fillText("F", 10 + 6*CUBE, 50);
+            //     context.fillText("G", 10 + 7*CUBE, 50);
+            //     context.fillText("H", 10+ 8*CUBE, 50 );
+            //     context.fillText("I", 20+ 9*CUBE, 50);
+            //     context.fillText("J", 10+ 10*CUBE,50);
 
-                context.font = "50px Arial";
-                context.fillText("1", 10 , 50+canvas.width/11);
-                context.fillText("2", 10, 50+ 2*canvas.width/11);
-                context.fillText("3", 10, 50+3*canvas.width/11);
-                context.fillText("4", 10, 50+ 4*canvas.width/11);
-                context.fillText("5", 10, 50+ 5*canvas.width/11 );
-                context.fillText("6", 10 , 50+ 6*canvas.width/11);
-                context.fillText("7", 10 , 50+ 7*canvas.width/11);
-                context.fillText("8", 10, 50 + 8*canvas.width/11);
-                context.fillText("9", 10, 50+ 9*canvas.width/11);
-                context.fillText("10", -5, 50+ 10*canvas.width/11);
+            //     context.font = "50px Arial";
+            //     context.fillText("1", 10 , 50+canvas.width/11);
+            //     context.fillText("2", 10, 50+ 2*canvas.width/11);
+            //     context.fillText("3", 10, 50+3*canvas.width/11);
+            //     context.fillText("4", 10, 50+ 4*canvas.width/11);
+            //     context.fillText("5", 10, 50+ 5*canvas.width/11 );
+            //     context.fillText("6", 10 , 50+ 6*canvas.width/11);
+            //     context.fillText("7", 10 , 50+ 7*canvas.width/11);
+            //     context.fillText("8", 10, 50 + 8*canvas.width/11);
+            //     context.fillText("9", 10, 50+ 9*canvas.width/11);
+            //     context.fillText("10", -5, 50+ 10*canvas.width/11);
                 
-            }
+            // }
 
-            function genEnemyGrid(){
-                for(i = 0; i <= 700; i = i + CUBE){
-                    context2.moveTo(i + CUBE, CUBE);
-                    context2.lineTo(i + CUBE,700);
-                    context2.stroke();
-                }
-                for(j= 0; j<=700 ; j = j + CUBE){
-                    context2.moveTo(CUBE,j + CUBE);
-                    context2.lineTo(canvas2.height,j+CUBE);
-                    context2.stroke();
-                } 
-                context2.font = "60px Arial";
-                context2.fillStyle = "yellow"
+            // function genEnemyGrid(){
+            //     for(i = 0; i <= 700; i = i + CUBE){
+            //         context2.moveTo(i + CUBE, CUBE);
+            //         context2.lineTo(i + CUBE,700);
+            //         context2.stroke();
+            //     }
+            //     for(j= 0; j<=700 ; j = j + CUBE){
+            //         context2.moveTo(CUBE,j + CUBE);
+            //         context2.lineTo(canvas2.height,j+CUBE);
+            //         context2.stroke();
+            //     } 
+            //     context2.font = "60px Arial";
+            //     context2.fillStyle = "yellow"
                 
-                context2.fillText("A", 10 + CUBE, 50);
-                context2.fillText("B", 10 + 2*CUBE, 50);
-                context2.fillText("C", 10+3*CUBE, 50);
-                context2.fillText("D", 10 + 4*CUBE, 50);
-                context2.fillText("E", 10 + 5*CUBE, 50 );
-                context2.fillText("F", 10 + 6*CUBE, 50);
-                context2.fillText("G", 10 + 7*CUBE, 50);
-                context2.fillText("H", 10+ 8*CUBE, 50 );
-                context2.fillText("I", 20+ 9*CUBE, 50);
-                context2.fillText("J", 10+ 10*CUBE,50);
+            //     context2.fillText("A", 10 + CUBE, 50);
+            //     context2.fillText("B", 10 + 2*CUBE, 50);
+            //     context2.fillText("C", 10+3*CUBE, 50);
+            //     context2.fillText("D", 10 + 4*CUBE, 50);
+            //     context2.fillText("E", 10 + 5*CUBE, 50 );
+            //     context2.fillText("F", 10 + 6*CUBE, 50);
+            //     context2.fillText("G", 10 + 7*CUBE, 50);
+            //     context2.fillText("H", 10+ 8*CUBE, 50 );
+            //     context2.fillText("I", 20+ 9*CUBE, 50);
+            //     context2.fillText("J", 10+ 10*CUBE,50);
 
-                context.font = "50px Arial";
-                context2.fillText("1", 10 , 50+CUBE);
-                context2.fillText("2", 10, 50+ 2*CUBE);
-                context2.fillText("3", 10, 50+3*CUBE);
-                context2.fillText("4", 10, 50+ 4*CUBE);
-                context2.fillText("5", 10, 50+ 5*CUBE);
-                context2.fillText("6", 10 , 50+ 6*CUBE);
-                context2.fillText("7", 10 , 50+ 7*CUBE);
-                context2.fillText("8", 10, 50 + 8*CUBE);
-                context2.fillText("9", 10, 50+ 9*CUBE);
-                context2.fillText("10", -5, 50+ 10*CUBE);
-            }
-            function drawAnimation()
-            {
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                var grd = context.createLinearGradient(0, 0, 0, canvas.height);
-                grd.addColorStop(0, "blue");
-                grd.addColorStop(1, 'red');
+            //     context.font = "50px Arial";
+            //     context2.fillText("1", 10 , 50+CUBE);
+            //     context2.fillText("2", 10, 50+ 2*CUBE);
+            //     context2.fillText("3", 10, 50+3*CUBE);
+            //     context2.fillText("4", 10, 50+ 4*CUBE);
+            //     context2.fillText("5", 10, 50+ 5*CUBE);
+            //     context2.fillText("6", 10 , 50+ 6*CUBE);
+            //     context2.fillText("7", 10 , 50+ 7*CUBE);
+            //     context2.fillText("8", 10, 50 + 8*CUBE);
+            //     context2.fillText("9", 10, 50+ 9*CUBE);
+            //     context2.fillText("10", -5, 50+ 10*CUBE);
+            // }
+            // function drawAnimation()
+            // {
+            //     context.clearRect(0, 0, canvas.width, canvas.height);
+            //     var grd = context.createLinearGradient(0, 0, 0, canvas.height);
+            //     grd.addColorStop(0, "blue");
+            //     grd.addColorStop(1, 'red');
 
-                // Fill with gradient
-                context.fillStyle = grd;
-                context.fillRect(0, 0, canvas.width, canvas.height ); 
+            //     // Fill with gradient
+            //     context.fillStyle = grd;
+            //     context.fillRect(0, 0, canvas.width, canvas.height ); 
 
-                context2.clearRect(0, 0, canvas.width, canvas.height);
-                var grd = context2.createLinearGradient(0, 0, 0, canvas2.height);
-                grd.addColorStop(0, "red");
-                grd.addColorStop(1, 'blue');
+            //     context2.clearRect(0, 0, canvas.width, canvas.height);
+            //     var grd = context2.createLinearGradient(0, 0, 0, canvas2.height);
+            //     grd.addColorStop(0, "red");
+            //     grd.addColorStop(1, 'blue');
 
-                // Fill with gradient
-                context2.fillStyle = grd;
-                context2.fillRect(0, 0, canvas2.width, canvas2.height ); 
+            //     // Fill with gradient
+            //     context2.fillStyle = grd;
+            //     context2.fillRect(0, 0, canvas2.width, canvas2.height ); 
 
-                genGrid();
-                genEnemyGrid();
-                c1.drawCruiser();
-                c2.drawCruiser();
+            //     genGrid();
+            //     genEnemyGrid();
+            //     c1.drawCruiser();
+            //     c2.drawCruiser();
                 
                 
-            }
-            function startAnimation()
-            {
-                canvas = document.getElementById("canvas");
-                context = canvas.getContext("2d");
-                canvas2 = document.getElementById("canvas2");
-                context2 = canvas2.getContext("2d");
+            // }
+            // function startAnimation()
+            // {
+            //     canvas = document.getElementById("canvas");
+            //     context = canvas.getContext("2d");
+            //     canvas2 = document.getElementById("canvas2");
+            //     context2 = canvas2.getContext("2d");
                 
-                context.strokeStyle = 'black';
-                context.lineWidth= 2;
+            //     context.strokeStyle = 'black';
+            //     context.lineWidth= 2;
 
-                context2.strokeStyle = 'black';
-                context2.lineWidth= 2;
+            //     context2.strokeStyle = 'black';
+            //     context2.lineWidth= 2;
                 
                 
         
-                intervalid = setInterval(drawAnimation, 15);
-                c1 = new Cruiser(CUBE,720,3,"red");
-                c2 = new Cruiser(CUBE*5,720,3,"red");
+            //     intervalid = setInterval(drawAnimation, 15);
+            //     c1 = new Cruiser(CUBE,720,3,"red");
+            //     c2 = new Cruiser(CUBE*5,720,3,"red");
 
                
 
-            }
+            // }
 
-            function stopAnimation()
-            {
+            // function stopAnimation()
+            // {
                 
 
 
-            }
-        </script> -->
+            // }
+        </script>
     </head>
     <body>
 
@@ -179,15 +184,15 @@
         <table>
 
             <tr>
-                <td id="00"></td>
-                <td id="01"></td>
-                <td id="03"></td>
-                <td id="04"></td>
-                <td id="05"></td>
-                <td id="06"></td>
-                <td id="07"></td>
-                <td id="08"></td>
-                <td id="09"></td>
+                <td id="0"></td>
+                <td id="1"></td>
+                <td id="3"></td>
+                <td id="4"></td>
+                <td id="5"></td>
+                <td id="6"></td>
+                <td id="7"></td>
+                <td id="8"></td>
+                <td id="9"></td>
             </tr>
             <tr>
                 <td id="10"></td>
@@ -292,114 +297,114 @@
         <table>
 
             <tr>
-                <td id="E00"></td>
-                <td id="E01"></td>
-                <td id="E03"></td>
-                <td id="E04"></td>
-                <td id="E05"></td>
-                <td id="E06"></td>
-                <td id="E07"></td>
-                <td id="E08"></td>
-                <td id="E09"></td>
+                <td id="100"></td>
+                <td id="101"></td>
+                <td id="103"></td>
+                <td id="104"></td>
+                <td id="105"></td>
+                <td id="106"></td>
+                <td id="107"></td>
+                <td id="108"></td>
+                <td id="109"></td>
             </tr>
             <tr>
-                <td id="E10"></td>
-                <td id="E11"></td>
-                <td id="E13"></td>
-                <td id="E14"></td>
-                <td id="E15"></td>
-                <td id="E16"></td>
-                <td id="E17"></td>
-                <td id="E18"></td>
-                <td id="E19"></td>
+                <td id="110"></td>
+                <td id="111"></td>
+                <td id="113"></td>
+                <td id="114"></td>
+                <td id="115"></td>
+                <td id="116"></td>
+                <td id="117"></td>
+                <td id="118"></td>
+                <td id="119"></td>
             </tr>
             <tr>
-                <td id="E20"></td>
-                <td id="E21"></td>
-                <td id="E23"></td>
-                <td id="E24"></td>
-                <td id="E25"></td>
-                <td id="E26"></td>
-                <td id="E27"></td>
-                <td id="E28"></td>
-                <td id="E29"></td>
+                <td id="120"></td>
+                <td id="121"></td>
+                <td id="123"></td>
+                <td id="124"></td>
+                <td id="125"></td>
+                <td id="126"></td>
+                <td id="127"></td>
+                <td id="128"></td>
+                <td id="129"></td>
             </tr>
             <tr>
-                <td id="E30"></td>
-                <td id="E31"></td>
-                <td id="E33"></td>
-                <td id="E34"></td>
-                <td id="E35"></td>
-                <td id="E36"></td>
-                <td id="E37"></td>
-                <td id="E38"></td>
-                <td id="E39"></td>
+                <td id="130"></td>
+                <td id="131"></td>
+                <td id="133"></td>
+                <td id="134"></td>
+                <td id="135"></td>
+                <td id="136"></td>
+                <td id="137"></td>
+                <td id="138"></td>
+                <td id="139"></td>
             </tr>
             <tr>
-                <td id="E40"></td>
-                <td id="E41"></td>
-                <td id="E43"></td>
-                <td id="E44"></td>
-                <td id="E45"></td>
-                <td id="E46"></td>
-                <td id="E47"></td>
-                <td id="E48"></td>
-                <td id="E49"></td>
+                <td id="140"></td>
+                <td id="141"></td>
+                <td id="143"></td>
+                <td id="144"></td>
+                <td id="145"></td>
+                <td id="146"></td>
+                <td id="147"></td>
+                <td id="148"></td>
+                <td id="149"></td>
             </tr>
             <tr>
-                <td id="E50"></td>
-                <td id="E51"></td>
-                <td id="E53"></td>
-                <td id="E54"></td>
-                <td id="E55"></td>
-                <td id="E56"></td>
-                <td id="E57"></td>
-                <td id="E58"></td>
-                <td id="E59"></td>
+                <td id="150"></td>
+                <td id="151"></td>
+                <td id="153"></td>
+                <td id="154"></td>
+                <td id="155"></td>
+                <td id="156"></td>
+                <td id="157"></td>
+                <td id="158"></td>
+                <td id="159"></td>
             </tr>
             <tr>
-                <td id="E60"></td>
-                <td id="E61"></td>
-                <td id="E63"></td>
-                <td id="E64"></td>
-                <td id="E65"></td>
-                <td id="E66"></td>
-                <td id="E67"></td>
-                <td id="E68"></td>
-                <td id="E69"></td>
+                <td id="160"></td>
+                <td id="161"></td>
+                <td id="163"></td>
+                <td id="164"></td>
+                <td id="165"></td>
+                <td id="166"></td>
+                <td id="167"></td>
+                <td id="168"></td>
+                <td id="169"></td>
             </tr>
             <tr>
-                <td id="E70"></td>
-                <td id="E71"></td>
-                <td id="E73"></td>
-                <td id="E74"></td>
-                <td id="E75"></td>
-                <td id="E76"></td>
-                <td id="E77"></td>
-                <td id="E78"></td>
-                <td id="E79"></td>
+                <td id="170"></td>
+                <td id="171"></td>
+                <td id="173"></td>
+                <td id="174"></td>
+                <td id="175"></td>
+                <td id="176"></td>
+                <td id="177"></td>
+                <td id="178"></td>
+                <td id="179"></td>
             </tr>
             <tr>
-                <td id="E80"></td>
-                <td id="E81"></td>
-                <td id="E83"></td>
-                <td id="E84"></td>
-                <td id="E85"></td>
-                <td id="E86"></td>
-                <td id="E87"></td>
-                <td id="E88"></td>
-                <td id="E89"></td>
+                <td id="180"></td>
+                <td id="181"></td>
+                <td id="183"></td>
+                <td id="184"></td>
+                <td id="185"></td>
+                <td id="186"></td>
+                <td id="187"></td>
+                <td id="188"></td>
+                <td id="189"></td>
             </tr>
             <tr>
-                <td id="E90"></td>
-                <td id="E91"></td>
-                <td id="E93"></td>
-                <td id="E94"></td>
-                <td id="E95"></td>
-                <td id="E96"></td>
-                <td id="E97"></td>
-                <td id="E98"></td>
-                <td id="E99"></td>
+                <td id="190"></td>
+                <td id="191"></td>
+                <td id="193"></td>
+                <td id="194"></td>
+                <td id="195"></td>
+                <td id="196"></td>
+                <td id="197"></td>
+                <td id="198"></td>
+                <td id="199"></td>
             </tr>
         </table>
     </div>
