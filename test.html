@@ -291,28 +291,104 @@
         <br />
         <button onclick="Fire()">Begin Game</button>
         <button onclick="Forfeit()">Forfeit</button>
-        <button onclick="Save()">Save Board
-        </button>
+        <button onclick="Save()">Save Board</button>
+        <button onclick="Carrier()">Carrier</button>
+        <button onclick="Battleship()">Battleship</button>
+        <button onclick="Submarine()">Submarine</button>
+        <button onclick="Cruiser()">Cruiser</button>
+        <button onclick="Destroyer()">Destroyer</button>
+        
+       
 
 
         <script>
             arr = []
+            carr = 
             
 
 
 
+           function carrier_loop(){
+               
+                for(var i = 0; i <= 99; ++i){
+                    el = document.getElementById(`${i}`)
+                    arr.push(el);  
+                    console.log(`${i}, ${el}`)
+                    el.addEventListener("click", placement);
+                    
+                }
+           }
+           function battleship_loop(){
+               
+               for(var i = 0; i <= 99; ++i){
+                   el = document.getElementById(`${i}`)
+                   arr.push(el);  
+                   console.log(`${i}, ${el}`)
+                   el.addEventListener("click", placement);
+                   
+               }
+          }
+          function submarine_loop(){
+               
+               for(var i = 0; i <= 99; ++i){
+                   el = document.getElementById(`${i}`)
+                   arr.push(el);  
+                   console.log(`${i}, ${el}`)
+                   el.addEventListener("click", placement);
+                   
+               }
+          }
+          function cruiser_loop(){
+               
+               for(var i = 0; i <= 99; ++i){
+                   el = document.getElementById(`${i}`)
+                   arr.push(el);  
+                   console.log(`${i}, ${el}`)
+                   el.addEventListener("click", placement);
+                   
+               }
+          }
+          function destroyer_loop(){
+               
+               for(var i = 0; i <= 99; ++i){
+                   el = document.getElementById(`${i}`)
+                   arr.push(el);  
+                   console.log(`${i}, ${el}`)
+                   el.addEventListener("click", placement);
+                   
+               }
+          }
 
-            for(var i = 0; i <= 199; ++i){
-                el = document.getElementById(`${i}`)
-                arr.push(el);  
-                console.log(`${i}, ${el}`)
-                el.addEventListener("click", myFunction);
-                
+            function placement(event) {
+                event.target.style.background = "green"           
+            } 
+            function Carrier(){
+                //5 spaces
+                console.log("Carrier");
+                def_loop();
+            }
+            function Battleship(){
+                //4 spaces
+                console.log("Battleship");
+                def_loop();
+            }
+            function Submarine(){
+                // 3 spaces
+                console.log("Submarine");
+                def_loop();
+            }
+            function Cruiser(){
+                // 3 spaces
+                console.log("cruiser");
+                def_loop();
+            }
+            function Destroyer(){
+                //2 spaces
+                console.log("Destroyer");
+                def_loop();
             }
 
-            function myFunction(event) {
-                event.target.style.background = "blue"           
-            } 
+            
         </script>
 
 
