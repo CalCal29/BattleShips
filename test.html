@@ -7,14 +7,7 @@
                 border: solid black 1px;
             }
         </style>
-        <script>
-            arr = []
-            for(var i = 0; i <= 200; ++i){
-                arr.push(document.getElementById('${i}'));  
-
-            }
-            
-        </script>
+        
     </head>
     <body>
 
@@ -27,6 +20,7 @@
             <tr>
                 <td id="0"></td>
                 <td id="1"></td>
+                <td id="2"></td>
                 <td id="3"></td>
                 <td id="4"></td>
                 <td id="5"></td>
@@ -38,6 +32,7 @@
             <tr>
                 <td id="10"></td>
                 <td id="11"></td>
+                <td id="12"></td>
                 <td id="13"></td>
                 <td id="14"></td>
                 <td id="15"></td>
@@ -49,6 +44,7 @@
             <tr>
                 <td id="20"></td>
                 <td id="21"></td>
+                <td id="22"></td>
                 <td id="23"></td>
                 <td id="24"></td>
                 <td id="25"></td>
@@ -60,6 +56,7 @@
             <tr>
                 <td id="30"></td>
                 <td id="31"></td>
+                <td id="32"></td>
                 <td id="33"></td>
                 <td id="34"></td>
                 <td id="35"></td>
@@ -71,6 +68,7 @@
             <tr>
                 <td id="40"></td>
                 <td id="41"></td>
+                <td id="42"></td>
                 <td id="43"></td>
                 <td id="44"></td>
                 <td id="45"></td>
@@ -82,6 +80,7 @@
             <tr>
                 <td id="50"></td>
                 <td id="51"></td>
+                <td id="52"></td>
                 <td id="53"></td>
                 <td id="54"></td>
                 <td id="55"></td>
@@ -93,6 +92,7 @@
             <tr>
                 <td id="60"></td>
                 <td id="61"></td>
+                <td id="62"></td>
                 <td id="63"></td>
                 <td id="64"></td>
                 <td id="65"></td>
@@ -104,8 +104,9 @@
             <tr>
                 <td id="70"></td>
                 <td id="71"></td>
+                <td id="72"></td>
                 <td id="73"></td>
-                <td id="7k4"></td>
+                <td id="74"></td>
                 <td id="75"></td>
                 <td id="76"></td>
                 <td id="77"></td>
@@ -115,6 +116,7 @@
             <tr>
                 <td id="80"></td>
                 <td id="81"></td>
+                <td id="82"></td>
                 <td id="83"></td>
                 <td id="84"></td>
                 <td id="85"></td>
@@ -126,6 +128,7 @@
             <tr>
                 <td id="90"></td>
                 <td id="91"></td>
+                <td id="92"></td>
                 <td id="93"></td>
                 <td id="94"></td>
                 <td id="95"></td>
@@ -135,11 +138,12 @@
                 <td id="99"></td>
             </tr>
         </table>
-        <table>
+        <table id="enemy_table">
 
             <tr>
                 <td id="100"></td>
                 <td id="101"></td>
+                <td id="102"></td>
                 <td id="103"></td>
                 <td id="104"></td>
                 <td id="105"></td>
@@ -151,6 +155,7 @@
             <tr>
                 <td id="110"></td>
                 <td id="111"></td>
+                <td id="112"></td>
                 <td id="113"></td>
                 <td id="114"></td>
                 <td id="115"></td>
@@ -162,6 +167,7 @@
             <tr>
                 <td id="120"></td>
                 <td id="121"></td>
+                <td id="122"></td>
                 <td id="123"></td>
                 <td id="124"></td>
                 <td id="125"></td>
@@ -173,6 +179,7 @@
             <tr>
                 <td id="130"></td>
                 <td id="131"></td>
+                <td id="132"></td>
                 <td id="133"></td>
                 <td id="134"></td>
                 <td id="135"></td>
@@ -184,6 +191,7 @@
             <tr>
                 <td id="140"></td>
                 <td id="141"></td>
+                <td id="142"></td>
                 <td id="143"></td>
                 <td id="144"></td>
                 <td id="145"></td>
@@ -195,6 +203,7 @@
             <tr>
                 <td id="150"></td>
                 <td id="151"></td>
+                <td id="152"></td>
                 <td id="153"></td>
                 <td id="154"></td>
                 <td id="155"></td>
@@ -206,6 +215,7 @@
             <tr>
                 <td id="160"></td>
                 <td id="161"></td>
+                <td id="162"></td>
                 <td id="163"></td>
                 <td id="164"></td>
                 <td id="165"></td>
@@ -217,6 +227,7 @@
             <tr>
                 <td id="170"></td>
                 <td id="171"></td>
+                <td id="172"></td>
                 <td id="173"></td>
                 <td id="174"></td>
                 <td id="175"></td>
@@ -228,6 +239,7 @@
             <tr>
                 <td id="180"></td>
                 <td id="181"></td>
+                <td id="182"></td>
                 <td id="183"></td>
                 <td id="184"></td>
                 <td id="185"></td>
@@ -239,6 +251,7 @@
             <tr>
                 <td id="190"></td>
                 <td id="191"></td>
+                <td id="192"></td>
                 <td id="193"></td>
                 <td id="194"></td>
                 <td id="195"></td>
@@ -278,6 +291,32 @@
         <br />
         <button onclick="Fire()">Begin Game</button>
         <button onclick="Forfeit()">Forfeit</button>
+        <button onclick="Save()">Save Board
+        </button>
+
+
+        <script>
+            arr = []
+            
+
+
+
+
+            for(var i = 0; i <= 199; ++i){
+                el = document.getElementById(`${i}`)
+                arr.push(el);  
+                console.log(`${i}, ${el}`)
+                el.addEventListener("click", myFunction);
+                
+            }
+
+            function myFunction(event) {
+                event.target.style.background = "blue"           
+            } 
+        </script>
+
+
+
     </body> 
 </html>
 
