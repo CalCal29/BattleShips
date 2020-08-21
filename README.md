@@ -1,4 +1,4 @@
-# BattleShips
+`# BattleShips
 ### Rules of the game:
 
 1. The game is be played on a 10x10 grid.
