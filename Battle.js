@@ -211,6 +211,7 @@ save_check = save_check -1;
 function Begin(){
 begin = 1;
 alert("Fire: Double click on enemy board to rain hell")
+alert("Colours: Yellow = miss, Red = Hit")
 
 document.getElementById('forfeit_id').style.visibility = 'visible';
 document.getElementById('begin_id').style.visibility = 'hidden';
