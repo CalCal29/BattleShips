@@ -9,9 +9,9 @@
 
         <!-- <canvas id="canvas" height="900px" width="700px"></canvas>
         <canvas id="canvas2" height="900px" width="700px"></canvas> -->
-        <div class="table_class">
+    <div class=".tc">
         
-        <table id="table">
+        <table style = "display: inline-block;" id="table">
 
             <tr class = "mine">
                 <td id="0"></td>
@@ -134,7 +134,7 @@
                 <td id="99"></td>
             </tr>
         </table>
-        <table id="enemy_table">
+        <table style="float: right;" id="enemy_table">
 
             <tr>
                 <td id="100"></td>
@@ -255,14 +255,15 @@
                 <td id="197"></td>
                 <td id="198"></td>
                 <td id="199"></td>
+                
             </tr>
         </table>
     </div>
         <style>
             td {
-                height: 4.8vw;
-                width: 4.8vw;
-                transition: 1s;
+                height: 4.5vw;
+                width: 4.5vw;
+                transition: .3s;
             }
 
             td:hover {
@@ -277,13 +278,14 @@
                 background-color: purple;
             }
 
-            .blah {
+            .tc {
                 display: flex;
                 justify-content: space-between;
             }
 
             table {
                 border: 5px solid black
+                
             }
         </style>
 
