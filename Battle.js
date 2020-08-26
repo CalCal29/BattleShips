@@ -250,7 +250,7 @@ function enemyTurn() {
     if (grid[co_ord] == 1) {
 
         document.getElementById(`${co_ord}`).style.background = "red";
-        grid[co_ord] = 0;
+        grid[co_ord] = 1;
 
     }
 
