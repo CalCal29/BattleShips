@@ -1,0 +1,19 @@
+{
+  "name": "battleships",
+  "version": "1.0.0",
+  "description": "`# BattleShips\r ### Rules of the game:",
+  "main": "Battle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CalCal29/BattleShips.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CalCal29/BattleShips/issues"
+  },
+  "homepage": "https://github.com/CalCal29/BattleShips#readme"
+}
