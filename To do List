@@ -1,6 +1,0 @@
-1. Learn node.js. I would like to use node.js in order to host servers for others to play against my battleship bot.
-2. Create the user interface. For this section i would there to be selectable battle ships, these battle ships can be placed on the grid although they cannot over lay.
-once cicked the battleship will stay in place on the grid. There will be a confirm button which locks in the battleships and updates the gird.
-
-3. Next we be creating the bot. This bot will use the hunting algorithm, this algortihm is the most used for battleship Ai.
-
