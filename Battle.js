@@ -66,6 +66,7 @@ function firing(event){
     var n = enemy_grid.includes(1);
     if(n != true){
         alert("you won");
+        location.reload();
         
         return;
     }
