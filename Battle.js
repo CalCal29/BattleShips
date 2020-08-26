@@ -1,6 +1,6 @@
 document.getElementById('forfeit_id').style.visibility = 'hidden';
 document.getElementById('begin_id').style.visibility = 'hidden';
-// arr and enemy_arr created to test 
+// arr and enemy_arr created to test
 var arr = [];
 var enemy_arr = [];
 var ship_allocation;
@@ -100,7 +100,7 @@ function placement(event) {
     var cell = e.getAttribute('id');
     cen = parseInt(cell, 10)
     grid[cen] = 1;
-    //testing 
+    //testing
     console.log(place)
     console.log(ship_allocation)
     console.log(cen)
@@ -212,6 +212,12 @@ function Save() {
     save_check = save_check - 1;
 
 }
+function Forfeit(){
+
+  alert("Didn'd realise Alistair was playing this. Damn you cracked under pressure to a num generator, LULW");
+  location.reload();
+}
+
 
 function Begin() {
     begin = 1;
